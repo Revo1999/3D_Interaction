@@ -59,6 +59,9 @@ Players must cooperate using non-verbal cues such as:
 ## 📦 Unity Assets & Resources
 
 - **Graphy FPS Counter** (works in VR)
+- **Crest Water FREE BIRP Github variant**
+- **Meta SDK**
+- **Self-modeled Assets from Autodesk Maya**
 
 ## 🧪 Theoretical Inspiration
 
