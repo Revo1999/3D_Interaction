@@ -2,6 +2,8 @@
 
 **Silent Shores** is an experimental asymmetric multiplayer game that explores non-verbal communication and collaboration between players using VR and tangible interfaces.
 
+> ⚠️ **This is a prototype in early development. Expect placeholder art, basic mechanics, and experimental features.**
+
 ## 🏴‍☠️ Project Concept
 
 One player wears a **VR headset** (Meta Quest) and navigates a pirate island in first-person view, trying to find a hidden treasure.
@@ -64,7 +66,3 @@ Players must cooperate using non-verbal cues such as:
 - Non-verbal Communication & Affordances
 - Presence & Immersion in Mixed Modal Systems
 - Multimodal & Cross-device Interaction
-
----
-
-> ⚠️ **This is a prototype in early development. Expect placeholder art, basic mechanics, and experimental features.**
