@@ -58,10 +58,16 @@ Players must cooperate using non-verbal cues such as:
 
 ## 📦 Unity Assets & Resources
 
-- **Graphy FPS Counter** (works in VR)
-- **Crest Water FREE BIRP Github variant**
+- **Graphy FPS Counter Unity package** (works in VR)
+- **Sortify Unity package**
+- **Cavi Unity Network Package (Closed Source)**
 - **Meta SDK**
+- **Open XR**
 - **Self-modeled Assets from Autodesk Maya**
+- **ChatGPT Texture/Normal Map Generation**
+- **[Waving Flag Github Repo](https://github.com/Fixkey/Waving-Flag/blob/master/Assets/ShaderTest.shader)**
+- **[Crest Water FREE BIRP Github variant](https://github.com/wave-harmonic/crest)**
+- **[Youtube video by Daniel Illet: Six Grass Rendering Techniques in Unity](https://www.youtube.com/watch?v=uHDmqfdVkak)**
 
 ## 🧪 Theoretical Inspiration
 
