@@ -1,0 +1,108 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+using System;
+using System.Runtime.InteropServices;
+using AOT;
+using TUIO;
+
+[RequireComponent(typeof(TUIOControl))]
+public class JSTUIOBridge : MonoBehaviour {
+    private const string DLL = "__Internal";
+    static class TUIOBridge {
+        private static HashSet<TUIOControl> listeners = new HashSet<TUIOControl>();
+
+        [DllImport(DLL, EntryPoint = "tuiobridge_init")] public static extern void Init(
+	    Action<int,int,float,float> addCursor,Action<int,int,float,float> updateCursor,Action<int,int,float,float> removeCursor,
+	    Action<int,int,float,float,float> add3DCursor,Action<int,int,float,float,float> update3DCursor,Action<int,int,float,float,float> remove3DCursor,
+	    Action<int,int,float,float,float> addObject,Action<int,int,float,float,float> updateObject,Action<int,int,float,float,float> removeObject,
+	    Action<int,int,float,float,float,float,float,float> add3DObject,Action<int,int,float,float,float,float,float,float> update3DObject,Action<int,int,float,float,float,float,float,float> remove3DObject,
+	    Action<int,float,float,float,float,float,float> addBlob,Action<int,float,float,float,float,float,float> updateBlob,Action<int,float,float,float,float,float,float> removeBlob
+        );
+
+        // Cursors
+        [MonoPInvokeCallback(typeof(Action<int,int,float,float>))] public static void AddCursor(int sessionId, int cursorId, float x, float y) {foreach (TUIOControl listener in listeners) listener.addTuioCursor(new TuioCursor(sessionId, cursorId, x, y));}
+        [MonoPInvokeCallback(typeof(Action<int,int,float,float>))] public static void UpdateCursor(int sessionId, int cursorId, float x, float y) {foreach (TUIOControl listener in listeners) listener.updateTuioCursor(new TuioCursor(sessionId, cursorId, x, y));}
+        [MonoPInvokeCallback(typeof(Action<int,int,float,float>))] public static void RemoveCursor(int sessionId, int cursorId, float x, float y) {foreach (TUIOControl listener in listeners) listener.removeTuioCursor(new TuioCursor(sessionId, cursorId, x, y));}
+
+        // 3D Cursors
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float>))]
+        public static void Add3DCursor(int sessionId, int cursorId, float x, float y, float z) {foreach (TUIOControl listener in listeners) listener.addTuio3DCursor(new Tuio3DCursor(sessionId, cursorId, x, y, z));}
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float>))]
+        public static void Update3DCursor(int sessionId, int cursorId, float x, float y, float z) {foreach (TUIOControl listener in listeners) listener.updateTuio3DCursor(new Tuio3DCursor(sessionId, cursorId, x, y, z));}
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float>))]
+        public static void Remove3DCursor(int sessionId, int cursorId, float x, float y, float z) {foreach (TUIOControl listener in listeners) listener.removeTuio3DCursor(new Tuio3DCursor(sessionId, cursorId, x, y, z));}
+
+        // Objects
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float>))] public static void AddObject(int sessionId, int symbolId, float x, float y, float angle) { foreach (TUIOControl listener in listeners){
+            listener.addTuioObject(new TuioObject(sessionId, symbolId, x, y, angle)); 
+        }}
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float>))] public static void UpdateObject(int sessionId, int symbolId, float x, float y, float angle) { foreach (TUIOControl listener in listeners){
+            listener.updateTuioObject(new TuioObject(sessionId, symbolId, x, y, angle));
+        }}
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float>))] public static void RemoveObject(int sessionId, int symbolId, float x, float y, float angle) { foreach (TUIOControl listener in listeners){
+            listener.removeTuioObject(new TuioObject(sessionId, symbolId, x, y, angle)); 
+        }}
+
+        // 3D Objects
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float, float, float, float>))]
+        public static void Add3DObject(int sessionId, int symbolId, float x, float y, float z, float xAngle, float yAngle, float zAngle) { foreach (TUIOControl listener in listeners) {
+            listener.addTuio3DObject(new Tuio3DObject(sessionId, symbolId, x, y, z, xAngle, yAngle, zAngle));
+        }}
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float, float, float, float>))]
+        public static void Update3DObject(int sessionId, int symbolId, float x, float y, float z, float xAngle, float yAngle, float zAngle) { foreach (TUIOControl listener in listeners) {
+            listener.updateTuio3DObject(new Tuio3DObject(sessionId, symbolId, x, y, z, xAngle, yAngle, zAngle)); 
+        }}
+        [MonoPInvokeCallback(typeof(Action<int, int, float, float, float, float, float, float>))] 
+        public static void Remove3DObject(int sessionId, int symbolId, float x, float y, float z, float xAngle, float yAngle, float zAngle) { foreach (TUIOControl listener in listeners) {
+            listener.removeTuio3DObject(new Tuio3DObject(sessionId, symbolId, x, y, z, xAngle, yAngle, zAngle));
+        }}
+
+        // Blobs
+        [MonoPInvokeCallback(typeof(Action<int, float, float, float, float, float, float>))]
+        public static void AddBlob(int sessionId, float x, float y, float angle, float width, float height, float area){ foreach (TUIOControl listener in listeners) {
+            listener.addTuioBlob(new TuioBlob(sessionId, x, y, angle, width, height, area)); 
+        }}
+        [MonoPInvokeCallback(typeof(Action<int, float, float, float, float, float, float>))]
+        public static void UpdateBlob(int sessionId, float x, float y, float angle, float width, float height, float area){ foreach (TUIOControl listener in listeners) {
+            listener.updateTuioBlob(new TuioBlob(sessionId, x, y, angle, width, height, area)); 
+        }}
+        [MonoPInvokeCallback(typeof(Action<int, float, float, float, float, float, float>))]
+        public static void RemoveBlob(int sessionId, float x, float y, float angle, float width, float height, float area){ foreach (TUIOControl listener in listeners) {
+            listener.removeTuioBlob(new TuioBlob(sessionId, x, y, angle, width, height, area)); 
+        }}        
+
+
+        public static void AddListener(TUIOControl controller){
+            lock (listeners){
+                listeners.Add(controller);
+            }
+        }
+        public static void RemoveListener(TUIOControl controller){
+            lock (listeners){
+                listeners.Remove(controller);
+            }
+        }        
+    }
+
+    public void OnEnable(){
+#if UNITY_WEBGL && !UNITY_EDITOR        
+        Debug.Log("Init js tuio bridge");
+        TUIOBridge.Init(
+	    TUIOBridge.AddCursor,TUIOBridge.UpdateCursor,TUIOBridge.RemoveCursor,
+	    TUIOBridge.Add3DCursor,TUIOBridge.Update3DCursor,TUIOBridge.Remove3DCursor,
+	    TUIOBridge.AddObject,TUIOBridge.UpdateObject,TUIOBridge.RemoveObject,
+	    TUIOBridge.Add3DObject,TUIOBridge.Update3DObject,TUIOBridge.Remove3DObject,
+	    TUIOBridge.AddBlob,TUIOBridge.UpdateBlob,TUIOBridge.RemoveBlob
+	);
+        TUIOBridge.AddListener(GetComponent<TUIOControl>());
+#else 
+        Debug.Log("TUIO JS Bridge does nothing outside WebGL");
+#endif
+    }
+
+    public void OnDisable(){
+        TUIOBridge.RemoveListener(GetComponent<TUIOControl>());
+    }
+}

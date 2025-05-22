@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Crest/Crest-Examples/Main/Scenes/main.unity
+    guid: 831b08ead2995f8419a358cd5da15916
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7ab7bcbf09e7c25469077cfd0f57c460,
+      type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: 7ec60eb1482816940a180e4c638d3d72,
+      type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 400f48243efe0da45baf8243292695df,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5fe1184993f1e460f934e68a989b0762,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e6f41882c1aedbd4eb840a3e7d52fd90,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: b37e65064f45f4fd6823321fb70ec038,
+      type: 2}
+  m_UseUCBPForAssetBundles: 0

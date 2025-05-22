@@ -1,0 +1,34 @@
+mergeInto(LibraryManager.library, {
+    tuiobridge_init: function (addCursor, updateCursor, removeCursor, 
+                             add3DCursor, update3DCursor, remove3DCursor, 
+                             addObject, updateObject, removeObject, 
+                             add3DObject, update3DObject, remove3DObject, 
+                             addBlob, updateBlob, removeBlob) {
+        console.log("JSTUIOBridge init");
+
+        // Cursors
+        Module.TUIO.addCursorCallback = addCursor;
+        Module.TUIO.updateCursorCallback = updateCursor;
+        Module.TUIO.removeCursorCallback = removeCursor;
+
+        // 3D Cursors
+        Module.TUIO.add3DCursorCallback = add3DCursor;
+        Module.TUIO.update3DCursorCallback = update3DCursor;
+        Module.TUIO.remove3DCursorCallback = remove3DCursor;
+
+        // Objects
+        Module.TUIO.addObjectCallback = addObject;
+        Module.TUIO.updateObjectCallback = updateObject;
+        Module.TUIO.removeObjectCallback = removeObject;
+
+        // 3D Objects
+        Module.TUIO.add3DObjectCallback = add3DObject;
+        Module.TUIO.update3DObjectCallback = update3DObject;
+        Module.TUIO.remove3DObjectCallback = remove3DObject;
+
+        // Blobs
+        Module.TUIO.addBlobCallback = addBlob;
+        Module.TUIO.updateBlobCallback = updateBlob;
+        Module.TUIO.removeBlobCallback = removeBlob;
+    }
+});

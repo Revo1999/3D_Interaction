@@ -1,0 +1,38 @@
+Module['TUIO'] = Module['TUIO'] || {};
+
+// Cursors
+Module['TUIO'].addCursor = function (sessionId, cursorId, x, y) {dynCall_viiff(Module.TUIO.addCursorCallback, sessionId, cursorId, x, y);}
+Module['TUIO'].updateCursor = function (sessionId, cursorId, x, y) {dynCall_viiff(Module.TUIO.updateCursorCallback, sessionId, cursorId, x, y);}
+Module['TUIO'].removeCursor = function (sessionId, cursorId, x, y) {dynCall_viiff(Module.TUIO.removeCursorCallback, sessionId, cursorId, x, y);}
+
+// 3D Cursors
+Module['TUIO'].add3DCursor = function(sessionId, cursorId, x, y, z) {dynCall_viiifff(Module.TUIO.add3DCursorCallback, sessionId, cursorId, x, y, z);};
+Module['TUIO'].update3DCursor = function(sessionId, cursorId, x, y, z) {  dynCall_viiifff(Module.TUIO.update3DCursorCallback, sessionId, cursorId, x, y, z);};
+Module['TUIO'].remove3DCursor = function(sessionId, cursorId, x, y, z) {  dynCall_viiifff(Module.TUIO.remove3DCursorCallback, sessionId, cursorId, x, y, z);};
+
+// Objects
+Module['TUIO'].addObject = function(sessionId, objectId, x, y, angle) { dynCall_viifff(Module.TUIO.addObjectCallback, sessionId, objectId, x, y, angle);};
+Module['TUIO'].updateObject = function(sessionId, objectId, x, y, angle) { dynCall_viifff(Module.TUIO.updateObjectCallback, sessionId, objectId, x, y, angle);};
+Module['TUIO'].removeObject = function(sessionId, objectId, x, y, angle) { dynCall_viifff(Module.TUIO.removeObjectCallback, sessionId, objectId, x, y, angle);};
+
+// 3DObjects
+Module['TUIO'].add3DObject = function(sessionId, objectId, x, y, z, xAngle, yAngle, zAngle) {
+  dynCall_viiffffff(Module.TUIO.add3DObjectCallback, sessionId, objectId, x, y, z, xAngle, yAngle, zAngle);
+};
+Module['TUIO'].update3DObject = function(sessionId, objectId, x, y, z, xAngle, yAngle, zAngle) {
+  dynCall_viiffffff(Module.TUIO.update3DObjectCallback, sessionId, objectId, x, y, z, xAngle, yAngle, zAngle);
+};
+Module['TUIO'].remove3DObject = function(sessionId, objectId, x, y, z, xAngle, yAngle, zAngle) {
+  dynCall_viiffffff(Module.TUIO.remove3DObjectCallback, sessionId, objectId, x, y, z, xAngle, yAngle, zAngle);
+};
+
+// Blobs
+Module['TUIO'].addBlob = function(sessionId, x, y, angle, width, height, area) {
+  dynCall_viffffff(Module.TUIO.addBlobCallback, sessionId, x, y, angle, width, height, area);
+};
+Module['TUIO'].updateBlob = function(sessionId, x, y, angle, width, height, area) {
+  dynCall_viffffff(Module.TUIO.updateBlobCallback, sessionId, x, y, angle, width, height, area);
+};
+Module['TUIO'].removeBlob = function(sessionId, x, y, angle, width, height, area) {
+  dynCall_viffffff(Module.TUIO.removeBlobCallback, sessionId, x, y, angle, width, height, area);
+};
