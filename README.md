@@ -68,6 +68,7 @@ Players must cooperate using non-verbal cues such as:
 - **[Waving Flag Github Repo](https://github.com/Fixkey/Waving-Flag/blob/master/Assets/ShaderTest.shader)**
 - **[Crest Water FREE BIRP Github variant](https://github.com/wave-harmonic/crest)**
 - **[Youtube video by Daniel Illet: Six Grass Rendering Techniques in Unity](https://www.youtube.com/watch?v=uHDmqfdVkak)**
+- **[Youtube video by HenneJoe: HOW TO CREATE: Cartoon Wind Effect (Legend of Zelda: The Wind Waker) in Unity](https://www.youtube.com/watch?v=Jj8UHGe5Aps)**
 
 ## 🧪 Theoretical Inspiration
 
