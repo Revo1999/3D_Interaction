@@ -30,13 +30,14 @@ public class ConnectionUIManager : MonoBehaviour
             yield return StartCoroutine(CheckWifiAndInternet((connected) =>
             {
                 wifiConnected = connected;
+                Debug.Log("Wi-Fi connected");
             }));
 
             wifiStatusText.text = wifiConnected ? "Wi-Fi: Connected" : "Wi-Fi: Disconnected";
             wifiStatusText.color = wifiConnected ? Color.green : Color.red;
 
             if (!wifiConnected)
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1f);
         } while (!wifiConnected);
 
         yield return new WaitForSeconds(1f);
