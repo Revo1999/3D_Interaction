@@ -1,14 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// WindGuide continuously spawns wind-like particle effects at randomized positions
-/// relative to a player, pointing toward a guide object.
-/// Each cycle spawns a specified number of particles at randomized times,
-/// which are destroyed after a short lifespan.
-/// </summary>
 public class WindGuide : MonoBehaviour
 {
+
     [Header("Scene References")]
     [Tooltip("The player object around which particles are spawned.")]
     public Transform player;
@@ -46,7 +41,7 @@ public class WindGuide : MonoBehaviour
     [Tooltip("Number of particles to spawn per cycle.")]
     public int particlesPerCycle = 3;
 
-    [Tooltip("How long each particle lives before being destroyed.")]
+    [Tooltip("How long each particle lives before being killed muhahaha!!")]
     public float particleLifetime = 4f;
 
     /// <summary>

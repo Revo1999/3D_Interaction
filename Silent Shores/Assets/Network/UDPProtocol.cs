@@ -249,4 +249,13 @@ public class UDPProtocol : NetworkProtocol {
             queuedMessages.Clear();
         }
     }
+
+    public void ClearAllClients()
+        {
+            foreach (var client in clients.Values)
+            {
+                client.Close();
+            }
+            clients.Clear();
+        }
 }

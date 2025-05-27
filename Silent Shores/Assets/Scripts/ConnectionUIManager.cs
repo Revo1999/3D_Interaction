@@ -10,6 +10,8 @@ public class ConnectionUIManager : MonoBehaviour
     public TextMeshProUGUI wifiStatusText;
     public TextMeshProUGUI tableStatusText;
 
+    public OSCConnectionWatcher connectionWatcher; // Assign in Inspector
+
     private readonly string[] dots = { ".", "..", "..." };
 
     void Start()
@@ -30,7 +32,6 @@ public class ConnectionUIManager : MonoBehaviour
             yield return StartCoroutine(CheckWifiAndInternet((connected) =>
             {
                 wifiConnected = connected;
-                Debug.Log("Wi-Fi connected");
             }));
 
             wifiStatusText.text = wifiConnected ? "Wi-Fi: Connected" : "Wi-Fi: Disconnected";
@@ -42,12 +43,27 @@ public class ConnectionUIManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        // 3. Animate "Table" (simulated)
-        yield return StartCoroutine(AnimateWithText(tableStatusText, "Table", 5f));
-        tableStatusText.text = "Table: Connected";
-        tableStatusText.color = Color.green;
+        // 3. Animate "Table" while waiting for OSC /pong
+        connectionWatcher.ResetStatus();
 
-        // 4. Fade out all text
+        float timeout = 5f;
+        float waited = 0f;
+        bool tableConnected = false;
+
+        while (waited < timeout && !connectionWatcher.TableConnected)
+        {
+            yield return StartCoroutine(AnimateWithText(tableStatusText, "Table", 1.5f));
+            waited += 1.5f;
+        }
+
+        tableConnected = connectionWatcher.TableConnected;
+
+        tableStatusText.text = tableConnected ? "Table: Connected" : "Table: Not Found";
+        tableStatusText.color = tableConnected ? Color.green : Color.red;
+
+        yield return new WaitForSeconds(1f);
+
+        // 4. Fade out
         yield return StartCoroutine(FadeOutTextGroup(1f));
     }
 
@@ -108,7 +124,7 @@ public class ConnectionUIManager : MonoBehaviour
 
         while (elapsed < duration)
         {
-            float t = 3f - (elapsed / duration);
+            float t = 1f - (elapsed / duration);
 
             Color fadeConnect = connectColor;
             fadeConnect.a = t;
