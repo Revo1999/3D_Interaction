@@ -15,7 +15,7 @@ public class PositionSender : MonoBehaviour
 
             GameObject.Find("Network Controller")
                 .GetComponent<UDPProtocol>()
-                .sendOSCMessage("TablePos", "/pos", positionArray);
+                .sendOSCMessage("TablePos", "/pos", "xyz:", string.Join(", ", positionArray));
         }
     }
 }

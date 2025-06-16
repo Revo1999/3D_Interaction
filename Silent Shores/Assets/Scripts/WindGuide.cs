@@ -3,7 +3,6 @@ using System.Collections;
 
 public class WindGuide : MonoBehaviour
 {
-
     [Header("Scene References")]
     [Tooltip("The player object around which particles are spawned.")]
     public Transform player;
@@ -43,6 +42,14 @@ public class WindGuide : MonoBehaviour
 
     [Tooltip("How long each particle lives before being killed muhahaha!!")]
     public float particleLifetime = 4f;
+
+    [Header("Sound Settings")]
+    [Tooltip("Array of wind sound clips to play randomly.")]
+    public AudioClip[] windSounds;
+
+    [Tooltip("Volume of wind sound (0-1).")]
+    [Range(0f, 1f)]
+    public float windVolume = 1f;
 
     /// <summary>
     /// Start the coroutine that spawns particles continuously in cycles.
@@ -102,7 +109,12 @@ public class WindGuide : MonoBehaviour
         GameObject particle = Instantiate(prefab, spawnPosition, rotation);
         particle.transform.localScale = Vector3.one * windScale;
 
-        // Let Unity handle playing the particle (Play On Awake = true)
+        // Play wind sound if any are assigned
+        if (windSounds != null && windSounds.Length > 0)
+        {
+            AudioClip clip = windSounds[Random.Range(0, windSounds.Length)];
+            AudioSource.PlayClipAtPoint(clip, spawnPosition, windVolume);
+        }
 
         // Schedule destruction
         Destroy(particle, particleLifetime);
