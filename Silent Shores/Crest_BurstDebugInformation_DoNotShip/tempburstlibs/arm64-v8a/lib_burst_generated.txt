@@ -1,4 +1,4 @@
-Library: C:\Users\Victor\Desktop\UnityWater\crest\crest\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
+Library: C:\Users\victo\Desktop\heyheyhey\Silent Shores UPDATED\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-18
 --target=ARMV8A_AARCH64
@@ -8,10 +8,10 @@ Library: C:\Users\Victor\Desktop\UnityWater\crest\crest\Temp\BurstOutput\tempbur
 --float-precision=Standard
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Victor\Desktop\UnityWater\crest\crest\Temp\Burst
---key-folder=C:/Users/Victor/Documents/6000.1.4f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=C:\Users\Victor\Desktop\UnityWater\crest\crest\Library\Burst
---output=C:\Users\Victor\Desktop\UnityWater\crest\crest\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
+--temp-folder=C:\Users\victo\Desktop\heyheyhey\Silent Shores UPDATED\Temp\Burst
+--key-folder=C:/Program Files/Unity/Hub/Editor/6000.1.4f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--decode-folder=C:\Users\victo\Desktop\heyheyhey\Silent Shores UPDATED\Library\Burst
+--output=C:\Users\victo\Desktop\heyheyhey\Silent Shores UPDATED\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[Crest.CollProviderBakedFFT+JobComputeVerticalVelocity, Crest, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(Crest.CollProviderBakedFFT+JobComputeVerticalVelocity&, Crest, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--b3a557074d8afa0b3a078135e3931860

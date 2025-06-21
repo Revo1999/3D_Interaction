@@ -40,7 +40,7 @@ public class FallTrap : MonoBehaviour
     private void ResetPlayer()
     {
         // Reset player movement
-        ovrController.Acceleration = 0.08f; // Default acceleration value
+        ovrController.Acceleration = 0.8f; // Default acceleration value
         
         // Hide death UI
         DieCanvas.SetActive(false);

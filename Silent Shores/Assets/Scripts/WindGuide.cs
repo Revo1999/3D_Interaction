@@ -51,53 +51,47 @@ public class WindGuide : MonoBehaviour
     [Range(0f, 1f)]
     public float windVolume = 1f;
 
-    /// <summary>
-    /// Start the coroutine that spawns particles continuously in cycles.
-    /// </summary>
+    // Internal control flag
+    private bool isEnabled = false;
+
     void Start()
     {
         StartCoroutine(SpawnCycle());
     }
 
-    /// <summary>
-    /// Coroutine that spawns a number of particles per cycle at random times.
-    /// </summary>
     IEnumerator SpawnCycle()
     {
         while (true)
         {
-            for (int i = 0; i < particlesPerCycle; i++)
+            if (isEnabled)
             {
-                float delay = Random.Range(0f, cycleDuration);
-                StartCoroutine(SpawnAndDestroyWithDelay(delay));
+                for (int i = 0; i < particlesPerCycle; i++)
+                {
+                    float delay = Random.Range(0f, cycleDuration);
+                    StartCoroutine(SpawnAndDestroyWithDelay(delay));
+                }
             }
 
             yield return new WaitForSeconds(cycleDuration);
         }
     }
 
-    /// <summary>
-    /// Spawns a particle after a delay and destroys it after a fixed lifetime.
-    /// </summary>
-    /// <param name="delay">Time in seconds to wait before spawning the particle.</param>
     IEnumerator SpawnAndDestroyWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        // Select a random particle prefab
+        if (!isEnabled) yield break;
+
         GameObject prefab = particlePrefabs[Random.Range(0, particlePrefabs.Length)];
 
-        // Generate random position offset around the player
         float offsetX = Random.Range(xRange.x, xRange.y) * windScale;
         float offsetZ = Random.Range(zRange.x, zRange.y) * windScale;
         Vector3 spawnPosition = player.position + new Vector3(offsetX, 0f, offsetZ);
         spawnPosition.y = player.position.y + yOffset;
 
-        // Calculate horizontal direction to guide
         Vector3 direction = guide.position - spawnPosition;
         direction.y = 0f;
 
-        // Rotate toward guide + optional rotation offset
         Quaternion rotation = Quaternion.identity;
         if (direction.sqrMagnitude > 0.001f)
         {
@@ -105,18 +99,31 @@ public class WindGuide : MonoBehaviour
             rotation *= Quaternion.Euler(rotationOffsetEuler);
         }
 
-        // Instantiate and scale the particle
         GameObject particle = Instantiate(prefab, spawnPosition, rotation);
         particle.transform.localScale = Vector3.one * windScale;
 
-        // Play wind sound if any are assigned
         if (windSounds != null && windSounds.Length > 0)
         {
             AudioClip clip = windSounds[Random.Range(0, windSounds.Length)];
             AudioSource.PlayClipAtPoint(clip, spawnPosition, windVolume);
         }
 
-        // Schedule destruction
         Destroy(particle, particleLifetime);
+    }
+
+    /// <summary>
+    /// Enables wind particle spawning.
+    /// </summary>
+    public void EnableWind()
+    {
+        isEnabled = true;
+    }
+
+    /// <summary>
+    /// Disables wind particle spawning.
+    /// </summary>
+    public void DisableWind()
+    {
+        isEnabled = false;
     }
 }

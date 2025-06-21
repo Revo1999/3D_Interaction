@@ -26,6 +26,8 @@ public class SpawnFirstTNTOnCollision : MonoBehaviour
             // Spawn the prefab
             Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
 
+            
+
             // Destroy this game object
             Destroy(gameObject);
         }

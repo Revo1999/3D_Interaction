@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1366044538244598658
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 540780792137966823, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548353259583628239, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: spawnPrefab
+      value: 
+      objectReference: {fileID: 4519155374883378403}
+    - target: {fileID: 1548353259583628239, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: igniteDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548353259583628239, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: TNTBarrelObject
+      value: 
+      objectReference: {fileID: 2820484714223662886}
+    - target: {fileID: 1548353259583628239, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: delayBeforeDestroy
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646818357037180324, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646818357037180324, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646818357037180324, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646818357037180324, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.190002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646818357037180324, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.3300076
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189227603489070945, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_Name
+      value: TNT_Barrel_with_boom_and_sound Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030529456737159405, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555544096594289013, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3189227603489070945, guid: a58a698f51fc33c40a2ea06a1d216337,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 964198188225022455}
+  m_SourcePrefab: {fileID: 100100000, guid: a58a698f51fc33c40a2ea06a1d216337, type: 3}
+--- !u!114 &543230569146902605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1548353259583628239, guid: a58a698f51fc33c40a2ea06a1d216337,
+    type: 3}
+  m_PrefabInstance: {fileID: 1366044538244598658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519155374883378403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4aba8d8943a9c45962a6a95d4e17cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2820484714223662886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3878010094748105892, guid: a58a698f51fc33c40a2ea06a1d216337,
+    type: 3}
+  m_PrefabInstance: {fileID: 1366044538244598658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4519155374883378403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3189227603489070945, guid: a58a698f51fc33c40a2ea06a1d216337,
+    type: 3}
+  m_PrefabInstance: {fileID: 1366044538244598658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &964198188225022455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519155374883378403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7d52ea593ef4145a35a473c36907c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTriggerName: TNTExplode
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 543230569146902605}
+        m_TargetAssemblyTypeName: TNTExplode, Assembly-CSharp
+        m_MethodName: Explode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1

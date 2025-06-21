@@ -10,6 +10,7 @@ public class PlayOnTrigger : MonoBehaviour
     public GameObject player;
     
     private bool isPlayerDead = false;
+    private bool trapDisarmed = false;
 
     void Update() 
     {
@@ -25,12 +26,13 @@ public class PlayOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && trapDisarmed == false)
         {
             TriggerTrap();
         }
         else if (other.CompareTag("Teddy"))
         {
+            trapDisarmed = true;
             animator.SetTrigger("Play");
             // Disable Trap or other Teddy-specific logic
         }
@@ -50,7 +52,7 @@ public class PlayOnTrigger : MonoBehaviour
         animator.Play("Reset", 0, 0f);
         
         // Reset player movement
-        ovrController.Acceleration = 0.08f; // Default acceleration value
+        ovrController.Acceleration = 0.8f; // Default acceleration value
         
         // Hide death UI
         DieCanvas.SetActive(false);

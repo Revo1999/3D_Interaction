@@ -7,6 +7,39 @@ TagManager:
   - FxTemporaire
   - TNT
   - TNTCaveEntryBush
+  - TNTSpawn1
+  - TNTSpawn2
+  - TNTSpawn3
+  - SpawnAfterTNT
+  - DieCanvas
+  - QDSUISection
+  - QDSUIAccentColor
+  - QDSUISecondaryButton
+  - QDSUIPrimaryButton
+  - QDSUITextSecondaryInvertedColor
+  - QDSUITextInvertedColor
+  - QDSUIToggleButton
+  - QDSUIIcon
+  - QDSUITextSecondaryColor
+  - QDSUIDestructiveButton
+  - QDSUISharedThemeColor
+  - QDSUIBorderlessButton
+  - QDSUIToggleBorderlessButton
+  - QDSUIBackplateGradient
+  - QDSUITooltip
+  - QDSUIToggleSwitch
+  - Locomotion
+  - LocoButton
+  - LocoText
+  - PassThroughButton
+  - PassThrough
+  - QDSUITextInputField
+  - SamplesInfoPanel
+  - QDSUIToggleCheckboxRadio
+  - Teddy
+  - DoorLockedWay
+  - TNTRespawnPoint
+  - DoorExplosionZone
   layers:
   - Default
   - TransparentFX
